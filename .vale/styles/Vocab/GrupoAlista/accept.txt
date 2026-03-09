@@ -1,0 +1,28 @@
+# Company names and brand terms
+Grupo Alista
+Alista
+Alista Consulting
+Alista Marketing
+Alista Salud
+Alista Hotels
+Alista Imports
+Feuerluft
+grupoalista
+
+# Spanish terms (common in the website)
+Diversificación
+Empresarial
+Propósito
+Consultoría
+Hoteles
+Importaciones
+Nosotros
+Contacto
+
+# Industry terms
+Fortune 500
+B2B
+ROI
+
+# Names
+Alvaro García

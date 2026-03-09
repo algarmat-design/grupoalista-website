@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# Assets that shouldn't be formatted
+assets/images/
+assets/fonts/
+
+# Git
+.git/
+
+# IDE
+.idea/
+.vscode/
+
+# Cache
+.cache/
+*.min.js
+*.min.css

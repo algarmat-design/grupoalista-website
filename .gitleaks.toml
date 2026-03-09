@@ -1,0 +1,19 @@
+# Gitleaks configuration
+# https://github.com/gitleaks/gitleaks
+
+title = "Gitleaks config for Grupo Alista"
+
+[allowlist]
+description = "Global allowlist"
+paths = [
+  '''node_modules''',
+  '''\.secrets\.baseline''',
+  '''package-lock\.json''',
+  '''\.vale'''
+]
+
+# Custom rules can be added here
+# [[rules]]
+# id = "custom-rule"
+# description = "Custom rule description"
+# regex = '''pattern'''

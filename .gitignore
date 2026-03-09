@@ -64,3 +64,17 @@ temp/
 # Local development
 .phpunit.result.cache
 .pytest_cache/
+
+# Pre-commit cache
+.pre-commit-cache/
+
+# Husky
+.husky/_/
+
+# Pa11y screenshots
+pa11y-screenshots/
+
+# Vale downloaded styles (keep custom ones)
+.vale/styles/write-good/
+.vale/styles/proselint/
+.vale/styles/Vale/
