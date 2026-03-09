@@ -4,7 +4,9 @@ Landing page for **Grupo Alista** — Diversificación Empresarial con Propósit
 
 ## About
 
-Grupo Alista is a diversified business group with five strategic business lines united by a common goal: generating sustainable economic value and contributing to social development.
+Grupo Alista is a diversified business group with five strategic business lines
+united by a common goal: generating sustainable economic value and contributing
+to social development.
 
 ### Business Lines
 
@@ -24,12 +26,14 @@ Grupo Alista is a diversified business group with five strategic business lines 
 ### Local Development
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/algarmat-design/grupoalista-website.git
    cd grupoalista-website
    ```
 
 2. Open `index.html` in your browser, or serve it locally:
+
    ```bash
    # Using Python 3
    python -m http.server 8000
