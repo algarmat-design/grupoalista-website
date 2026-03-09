@@ -1,0 +1,133 @@
+repos:
+  # =============================================================================
+  # GENERAL HYGIENE & CONSISTENCY
+  # =============================================================================
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      # File hygiene
+      - id: trailing-whitespace
+        args: [--markdown-linebreak-ext=md]
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+        args: [--fix=lf]
+      - id: check-merge-conflict
+      - id: check-case-conflict
+
+      # File size and binary checks
+      - id: check-added-large-files
+        args: [--maxkb=1024]
+      - id: check-byte-order-marker
+
+      # Syntax validation
+      - id: check-json
+      - id: check-yaml
+      - id: check-xml
+
+      # Security - prevent sensitive data commits
+      - id: detect-private-key
+      - id: detect-aws-credentials
+
+  # =============================================================================
+  # SECURITY SCANNING
+  # =============================================================================
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.4.0
+    hooks:
+      - id: detect-secrets
+        args: ['--baseline', '.secrets.baseline']
+        exclude: package-lock\.json|\.vale\.ini
+
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.18.1
+    hooks:
+      - id: gitleaks
+        name: Detect hardcoded secrets
+
+  # =============================================================================
+  # HTML LINTING
+  # =============================================================================
+  - repo: https://github.com/Lucas-C/pre-commit-hooks-markup
+    rev: v1.0.1
+    hooks:
+      - id: rst-linter
+        files: \.rst$
+
+  - repo: local
+    hooks:
+      - id: htmlhint
+        name: HTMLHint
+        entry: npx htmlhint
+        language: system
+        files: \.html$
+        args: ['--config', '.htmlhintrc']
+
+  # =============================================================================
+  # CSS LINTING
+  # =============================================================================
+  - repo: local
+    hooks:
+      - id: stylelint
+        name: Stylelint CSS
+        entry: npx stylelint
+        language: system
+        files: \.(css|scss|sass)$
+        args: ['--config', '.stylelintrc.json', '--fix']
+
+  # =============================================================================
+  # JAVASCRIPT LINTING
+  # =============================================================================
+  - repo: local
+    hooks:
+      - id: eslint
+        name: ESLint JavaScript
+        entry: npx eslint
+        language: system
+        files: \.(js|jsx|ts|tsx)$
+        args: ['--config', '.eslintrc.json', '--fix']
+
+  # =============================================================================
+  # CODE FORMATTING
+  # =============================================================================
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v3.1.0
+    hooks:
+      - id: prettier
+        types_or: [html, css, javascript, json, yaml, markdown]
+        args: ['--config', '.prettierrc', '--write']
+        additional_dependencies:
+          - prettier@3.1.0
+
+  # =============================================================================
+  # TEXT/PROSE LINTING WITH VALE
+  # =============================================================================
+  - repo: local
+    hooks:
+      - id: vale
+        name: Vale prose linter
+        entry: vale
+        language: system
+        files: \.(html|md|txt)$
+        args: ['--config', '.vale.ini']
+
+  # =============================================================================
+  # LINK VALIDATION
+  # =============================================================================
+  - repo: local
+    hooks:
+      - id: check-links
+        name: Check for broken links
+        entry: npx linkinator
+        language: system
+        files: \.html$
+        args: ['--skip', 'wa.me', '--skip', 'mailto:', '--skip', 'tel:']
+        stages: [manual]
+
+  # =============================================================================
+  # COMMIT MESSAGE VALIDATION
+  # =============================================================================
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: v3.13.0
+    hooks:
+      - id: commitizen
+        stages: [commit-msg]

@@ -1,0 +1,17 @@
+# Gitleaks configuration
+# https://github.com/gitleaks/gitleaks
+
+title = "Gitleaks config for Grupo Alista"
+
+# Use default rules
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Global allowlist"
+paths = [
+  '''node_modules''',
+  '''\.secrets\.baseline''',
+  '''package-lock\.json''',
+  '''\.vale'''
+]

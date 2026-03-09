@@ -2,7 +2,8 @@
 
 ## Reporting a Vulnerability
 
-If you discover a security vulnerability in this website, please report it by emailing:
+If you discover a security vulnerability in this website, please report it by
+emailing:
 
 **ventas@grupoalista.com**
 
@@ -12,8 +13,10 @@ Please include:
 - Steps to reproduce the issue
 - Potential impact
 
-We will respond as quickly as possible and work to address any legitimate security concerns.
+We will respond as quickly as possible and work to address any legitimate
+security concerns.
 
 ## Scope
 
-This security policy applies to the Grupo Alista landing page and associated assets hosted in this repository.
+This security policy applies to the Grupo Alista landing page and associated
+assets hosted in this repository.

@@ -1,0 +1,48 @@
+{
+  "name": "grupoalista-website",
+  "version": "1.0.0",
+  "description": "Landing page for Grupo Alista",
+  "private": true,
+  "scripts": {
+    "lint": "npm run lint:html && npm run lint:css && npm run lint:js",
+    "lint:html": "htmlhint --config .htmlhintrc '*.html'",
+    "lint:css": "stylelint '**/*.css' --config .stylelintrc.json",
+    "lint:js": "eslint '**/*.js' --config .eslintrc.json",
+    "lint:prose": "vale --config .vale.ini .",
+    "format": "prettier --write '**/*.{html,css,js,json,md,yml,yaml}'",
+    "format:check": "prettier --check '**/*.{html,css,js,json,md,yml,yaml}'",
+    "validate": "npm run lint && npm run format:check && npm run lint:prose",
+    "prepare": "husky install || true"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "htmlhint": "^1.1.4",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
+    "prettier": "^3.1.0",
+    "stylelint": "^16.1.0",
+    "stylelint-config-standard": "^36.0.0"
+  },
+  "lint-staged": {
+    "*.html": [
+      "htmlhint --config .htmlhintrc",
+      "prettier --write"
+    ],
+    "*.css": [
+      "stylelint --config .stylelintrc.json --fix",
+      "prettier --write"
+    ],
+    "*.js": [
+      "eslint --config .eslintrc.json --fix",
+      "prettier --write"
+    ],
+    "*.{json,yml,yaml,md}": [
+      "prettier --write"
+    ]
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "author": "Grupo Alista",
+  "license": "UNLICENSED"
+}
