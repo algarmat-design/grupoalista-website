@@ -29,7 +29,7 @@ Grupo Alista is a diversified business group with five strategic business lines 
    cd grupoalista-website
    ```
 
-2. Open `main.html` in your browser, or serve it locally:
+2. Open `index.html` in your browser, or serve it locally:
    ```bash
    # Using Python 3
    python -m http.server 8000
@@ -44,14 +44,29 @@ Grupo Alista is a diversified business group with five strategic business lines 
 
 ```
 grupoalista-website/
-├── main.html                  # Main landing page
-├── NEW ALISTA LOGO.png        # Primary logo
-├── ALISTA CONSULTING 2.png    # Consulting division logo
-├── ALISTA MARKETING 2.png     # Marketing division logo
-├── ALISTA SALUD 2.png         # Health division logo
-├── ALISTA HOTELS 2.png        # Hotels division logo
-├── ALISTA IMPORTS 2.png       # Imports division logo
-└── README.md
+├── index.html                      # Main landing page
+├── assets/
+│   ├── css/                        # Stylesheets
+│   ├── js/                         # JavaScript files
+│   ├── fonts/                      # Custom fonts (if any)
+│   └── images/
+│       ├── logos/                  # Brand and division logos
+│       │   ├── logo-main.png       # Primary Grupo Alista logo
+│       │   ├── logo-consulting.png # Alista Consulting
+│       │   ├── logo-marketing.png  # Alista Marketing
+│       │   ├── logo-salud.png      # Alista Salud
+│       │   ├── logo-hotels.png     # Alista Hotels
+│       │   └── logo-imports.png    # Alista Imports
+│       ├── hero/                   # Hero section images/videos
+│       └── about/                  # About section images
+├── .github/                        # GitHub configuration
+│   ├── CODEOWNERS
+│   └── PULL_REQUEST_TEMPLATE.md
+├── .editorconfig                   # Editor configuration
+├── .gitignore                      # Git ignore rules
+├── LICENSE                         # License file
+├── README.md                       # This file
+└── SECURITY.md                     # Security policy
 ```
 
 ## Deployment
