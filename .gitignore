@@ -1,0 +1,66 @@
+# Dependencies
+node_modules/
+vendor/
+
+# Build outputs
+dist/
+build/
+.cache/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Editor directories and files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Backup files
+*.bak
+*.backup
+
+# Compiled CSS/JS (if using preprocessors)
+*.css.map
+*.js.map
+
+# Package manager locks (uncomment if not using)
+# package-lock.json
+# yarn.lock
+
+# FTP/deployment config
+.ftpconfig
+.ftppass
+.sftp-config.json
+
+# Local development
+.phpunit.result.cache
+.pytest_cache/
