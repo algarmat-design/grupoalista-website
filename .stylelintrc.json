@@ -44,9 +44,5 @@
       "outline": ["none"]
     }
   },
-  "ignoreFiles": [
-    "node_modules/**/*",
-    "dist/**/*",
-    "build/**/*"
-  ]
+  "ignoreFiles": ["node_modules/**/*", "dist/**/*", "build/**/*"]
 }

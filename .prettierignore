@@ -20,3 +20,6 @@ assets/fonts/
 .cache/
 *.min.js
 *.min.css
+
+# Pre-commit config (complex YAML)
+.pre-commit-config.yaml

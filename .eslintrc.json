@@ -60,10 +60,5 @@
     "clearInterval": "readonly",
     "IntersectionObserver": "readonly"
   },
-  "ignorePatterns": [
-    "node_modules/",
-    "dist/",
-    "build/",
-    "*.min.js"
-  ]
+  "ignorePatterns": ["node_modules/", "dist/", "build/", "*.min.js"]
 }

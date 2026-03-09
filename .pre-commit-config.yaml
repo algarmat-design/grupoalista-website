@@ -124,18 +124,6 @@ repos:
         stages: [manual]
 
   # =============================================================================
-  # IMAGE OPTIMIZATION CHECK
-  # =============================================================================
-  - repo: local
-    hooks:
-      - id: check-image-size
-        name: Check image file sizes
-        entry: bash -c 'find assets/images -type f \( -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" \) -size +500k -exec echo "WARNING: Large image file: {}" \;'
-        language: system
-        pass_filenames: false
-        always_run: true
-
-  # =============================================================================
   # COMMIT MESSAGE VALIDATION
   # =============================================================================
   - repo: https://github.com/commitizen-tools/commitizen

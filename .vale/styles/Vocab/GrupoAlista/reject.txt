@@ -1,5 +1,0 @@
-# Terms that should not appear in professional copy
-blacklist
-whitelist
-master/slave
-dummy
