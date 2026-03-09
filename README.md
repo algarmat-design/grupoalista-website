@@ -25,7 +25,7 @@ Grupo Alista is a diversified business group with five strategic business lines 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/grupoalista/grupoalista-website.git
+   git clone https://github.com/algarmat-design/grupoalista-website.git
    cd grupoalista-website
    ```
 
