@@ -4,7 +4,6 @@
     "wait": 1000,
     "standard": "WCAG2AA",
     "runners": ["htmlcs"],
-    "ignore": ["WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail"],
     "chromeLaunchConfig": {
       "args": ["--no-sandbox"]
     }
@@ -12,7 +11,8 @@
   "urls": [
     {
       "url": "./index.html",
-      "screenCapture": "./pa11y-screenshots/index.png"
+      "screenCapture": "./pa11y-screenshots/index.png",
+      "ignore": ["WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail"]
     }
   ]
 }

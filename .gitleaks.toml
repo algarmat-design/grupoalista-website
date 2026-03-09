@@ -3,6 +3,10 @@
 
 title = "Gitleaks config for Grupo Alista"
 
+# Use default rules
+[extend]
+useDefault = true
+
 [allowlist]
 description = "Global allowlist"
 paths = [
@@ -11,9 +15,3 @@ paths = [
   '''package-lock\.json''',
   '''\.vale'''
 ]
-
-# Custom rules can be added here
-# [[rules]]
-# id = "custom-rule"
-# description = "Custom rule description"
-# regex = '''pattern'''

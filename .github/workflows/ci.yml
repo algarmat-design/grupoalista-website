@@ -33,7 +33,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Run Trivy vulnerability scanner
-        uses: aquasecurity/trivy-action@master
+        uses: aquasecurity/trivy-action@0.28.0
         with:
           scan-type: 'fs'
           scan-ref: '.'
@@ -66,14 +66,17 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # Non-blocking during initial rollout - will be made blocking once codebase is fully compliant
       - name: Run HTMLHint
         run: npm run lint:html
         continue-on-error: true
 
+      # Non-blocking during initial rollout - will be made blocking once codebase is fully compliant
       - name: Run Stylelint
         run: npm run lint:css
         continue-on-error: true
 
+      # Non-blocking during initial rollout - will be made blocking once codebase is fully compliant
       - name: Run ESLint
         run: npm run lint:js
         continue-on-error: true
@@ -114,9 +117,11 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Create screenshots directory
+        run: mkdir -p pa11y-screenshots
+
       - name: Run pa11y accessibility check
-        run: |
-          npx pa11y-ci --config .pa11yci.json || true
+        run: npx pa11y-ci --config .pa11yci.json
         continue-on-error: true
 
   # ===========================================================================
