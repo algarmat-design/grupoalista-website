@@ -91,23 +91,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Install Vale
-        run: |
-          wget -q https://github.com/errata-ai/vale/releases/download/v2.30.0/vale_2.30.0_Linux_64-bit.tar.gz
-          tar -xzf vale_2.30.0_Linux_64-bit.tar.gz
-          sudo mv vale /usr/local/bin/
-
-      - name: Download Vale styles
-        run: |
-          mkdir -p .vale/styles
-          cd .vale/styles
-          wget -q https://github.com/errata-ai/write-good/releases/download/v1.0.0/write-good.zip
-          unzip -q write-good.zip
-          wget -q https://github.com/errata-ai/proselint/releases/download/v0.3.3/proselint.zip
-          unzip -q proselint.zip
-
-      - name: Run Vale
-        run: vale --config .vale.ini --output=line . || true
+      - name: Vale Linter
+        uses: errata-ai/vale-action@v2
+        with:
+          files: '["index.html", "README.md"]'
+          fail_on_error: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   # ===========================================================================
   # ACCESSIBILITY CHECK
