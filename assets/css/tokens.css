@@ -1,0 +1,17 @@
+/* ===== DESIGN TOKENS ===== */
+:root {
+  --copper: #b87333;
+  --copper-light: #d4956a;
+  --steel: #8a9bae;
+  --steel-light: #b0bec5;
+  --charcoal: #121217;
+  --charcoal-light: #1a1a22;
+  --surface: #15151d;
+  --surface-hover: #1e1e28;
+  --text-primary: #eae7e2;
+  --text-secondary: #9a978f;
+  --text-muted: #6b6860;
+  --border: rgba(184, 115, 51, 0.15);
+  --glow-copper: rgba(184, 115, 51, 0.25);
+  --glow-steel: rgba(138, 155, 174, 0.15);
+}

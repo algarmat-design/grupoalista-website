@@ -1,0 +1,25 @@
+{
+  "enabled": true,
+  "name": "Sync Docs on Source Change",
+  "description": "When HTML, CSS, JS, or config files are edited, asks the agent to review the changes and update the README.md (or docs folder if one exists) to keep documentation in sync with the source code.",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "*.html",
+      "*.css",
+      "*.js",
+      "*.json",
+      ".htmlhintrc",
+      ".stylelintrc.json",
+      ".eslintrc.json",
+      ".prettierrc",
+      ".pa11yci.json",
+      ".editorconfig"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "A source file was just edited. Review the change and determine if the README.md needs to be updated to reflect it. Consider updates to: project structure, setup instructions, configuration details, feature descriptions, or any other documented aspect that may now be out of date. If a docs/ folder exists, update relevant files there too. Only make changes if the edit meaningfully affects documentation — skip trivial or cosmetic-only changes."
+  }
+}

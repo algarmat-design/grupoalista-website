@@ -1,0 +1,27 @@
+{
+  "enabled": true,
+  "name": "Auto-Translate Localization Files",
+  "description": "Monitors changes to localization files (.json, .yaml, .yml) in the locales/ directory. When the primary language file (Spanish - es) is modified, automatically identifies new or changed text entries and generates accurate translations for all configured target languages (English - en). Translations preserve context, meaning, and locale-specific conventions such as date formats, number formatting, and cultural nuances.",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "**/locales/es/**/*.json",
+      "**/locales/es/**/*.yaml",
+      "**/locales/es/**/*.yml",
+      "**/locales/es.json",
+      "**/locales/es.yaml",
+      "**/locales/es.yml",
+      "**/i18n/es/**/*.json",
+      "**/i18n/es/**/*.yaml",
+      "**/i18n/es/**/*.yml",
+      "**/lang/es/**/*.json",
+      "**/lang/es/**/*.yaml",
+      "**/lang/es/**/*.yml"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "A primary language (Spanish/es) localization file was just modified. Please do the following:\n\n1. Read the modified Spanish localization file and identify all new or changed text entries by comparing with the corresponding English (en) translation file.\n\n2. For each new or modified entry, generate an accurate English translation that:\n   - Preserves the original meaning and context\n   - Uses natural, fluent phrasing appropriate for the target locale\n   - Maintains any interpolation variables, placeholders (e.g., {{name}}, {count}), or HTML tags exactly as they appear in the source\n   - Follows locale-specific conventions (date formats, number formatting, currency symbols, pluralization rules)\n   - Keeps the same JSON/YAML structure and key hierarchy as the source file\n\n3. Update the corresponding English translation file(s) with the new translations, preserving any existing translations that were not modified in the source.\n\n4. If the target language file does not exist yet, create it with the complete translated content mirroring the source file structure.\n\n5. Summarize what was translated: list the keys that were added or updated."
+  }
+}
